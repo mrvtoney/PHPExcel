@@ -1,7 +1,7 @@
 <?php
 
 /**  Require mPDF library */
-$pdfRendererClassFile = PHPExcel_Settings::getPdfRendererPath() . '/mpdf.php';
+$pdfRendererClassFile = PHPExcel_Settings::getPdfRendererPath() . 'Mpdf.php';
 if (file_exists($pdfRendererClassFile)) {
     require_once $pdfRendererClassFile;
 } else {
@@ -91,7 +91,7 @@ class PHPExcel_Writer_PDF_mPDF extends PHPExcel_Writer_PDF_Core implements PHPEx
 
 
         //  Create PDF
-        $pdf = new mpdf();
+        $pdf = new Mpdf\Mpdf();
         $ortmp = $orientation;
         $pdf->_setPageSize(strtoupper($paperSize), $ortmp);
         $pdf->DefOrientation = $orientation;
